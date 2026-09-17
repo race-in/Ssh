@@ -1,0 +1,882 @@
+/*
+ * Gazelle / Music Tracker — PTP Grid inspired theme
+ * Adapted for the existing Gazelle/What.CD-style markup.
+ *
+ * This is an override stylesheet: it keeps the site's existing HTML/JS
+ * structure and changes presentation only.
+ */
+
+/* ---------- Base ---------- */
+
+@import url('https://fonts.googleapis.com/css?family=Inconsolata:400,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700');
+
+html {
+    font-size: 13px;
+    width: 100%;
+}
+
+body {
+    margin: 0;
+    min-height: 100%;
+    min-width: 950px;
+    width: 100%;
+    overflow-wrap: break-word;
+    position: relative;
+    color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #e3e2de url('https://ptp-grid.web.app/gridbg.png') !important;
+}
+
+a {
+    color: #7a171f;
+    text-decoration: none;
+    transition: color .12s linear, background-color .12s linear;
+}
+
+a:hover {
+    color: #b40000;
+    text-decoration: none;
+}
+
+h1, h2, h3 {
+    color: #222;
+    font-family: 'Roboto Condensed', Arial, sans-serif;
+    font-weight: 400;
+    text-shadow: 1px 1px 0 #fff;
+}
+
+h2 {
+    font-size: 18px;
+}
+
+h3 {
+    font-size: 16px;
+}
+
+p {
+    margin: 10px 0;
+}
+
+table {
+    border: 0;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    padding: 7px 8px;
+    text-align: left;
+}
+
+/* ---------- Main page frame ---------- */
+
+#content,
+#wrapper {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#content {
+    box-sizing: border-box;
+    max-width: 1320px;
+    width: 90%;
+    padding: 18px;
+    background: rgba(250, 250, 250, .97);
+    border: 1px solid #b5aca5;
+    border-top: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,.20);
+}
+
+#content.content_full {
+    max-width: none;
+}
+
+#content .thin,
+.thin {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ---------- Logo ---------- */
+
+/*
+ * Keep the site's own #logo image. The original stylesheet embeds the
+ * site's logo as a data URI, so this theme deliberately does not replace it.
+ */
+#logo {
+    height: 120px;
+    width: 300px;
+    padding: 0;
+    margin: 0 auto;
+    display: block;
+}
+
+#logo a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+/* ---------- Header / navigation ---------- */
+
+#menu {
+    box-sizing: border-box;
+    max-width: 1320px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 0;
+    min-height: 44px;
+    line-height: normal;
+    text-align: center;
+    background: #9c1c27 url('https://ptp-grid.web.app/menubg.png');
+    border: 1px solid #670d15;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.25);
+}
+
+#menu ul {
+    margin: 0;
+    padding: 0;
+}
+
+#menu ul li {
+    display: inline-block;
+    visibility: visible;
+    margin: 0 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+}
+
+#menu ul li a {
+    display: inline-block;
+    min-width: auto;
+    padding: 8px 15px;
+    border-radius: 0;
+    color: #fff;
+    text-shadow: 1px 1px 0 #5b1118;
+    background: transparent;
+}
+
+#menu ul li a:hover {
+    color: #fff;
+    background: #7e0c16 url('https://ptp-grid.web.app/menubg-hover.png');
+}
+
+#menu ul li a:after {
+    display: none;
+}
+
+/* Current-page navigation item */
+#chat #nav_irc a,
+#collage #nav_collages a,
+#forums #nav_forums a,
+#index #nav_index a,
+#requests #nav_requests a,
+#rules #nav_rules a,
+#staff #nav_staff a,
+#top10 #nav_top10 a,
+#torrents #nav_torrents a,
+#wiki #nav_wiki a {
+    font-weight: 700;
+    color: #fff;
+    background: #7e0c16 url('https://ptp-grid.web.app/menubg-hover.png');
+}
+
+/* ---------- Search bar ---------- */
+
+#searchbars {
+    box-sizing: border-box;
+    max-width: 1320px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 5px 0;
+    text-align: center;
+    background: transparent;
+    border: 0;
+}
+
+#searchbars ul {
+    margin: 0 auto;
+    padding: 0;
+    max-width: none;
+}
+
+#searchbars ul li {
+    display: inline-block;
+    margin: 2px;
+    visibility: visible;
+}
+
+#searchbars input {
+    box-sizing: border-box;
+    height: 30px;
+    width: 180px;
+    margin: 0;
+    padding: 5px 8px;
+    background: #fff;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    box-shadow: none;
+    color: #333;
+    text-shadow: none;
+}
+
+#searchbars input:focus,
+#searchbars input:hover {
+    background: #fff;
+    border-color: #888;
+    color: #222;
+    outline: none;
+}
+
+.autocomplete-suggestions {
+    margin-top: 2px;
+    background: #ededed;
+    border: 1px solid #999;
+    box-shadow: 0 2px 5px rgba(0,0,0,.25);
+}
+
+.autocomplete-suggestion {
+    color: #555;
+    padding: 5px 7px;
+}
+
+.autocomplete-selected {
+    background: #fafafa;
+    color: #222;
+}
+
+/* ---------- User information ---------- */
+
+#userinfo_username {
+    box-sizing: border-box;
+    max-width: 1320px;
+    width: 90%;
+    margin: 0 auto !important;
+    padding: 0 10px !important;
+    background: #fafafa;
+    border: 1px solid #b5aca5;
+    border-top: 0;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    color: #333;
+    text-align: right;
+}
+
+#userinfo_username li {
+    background: transparent;
+}
+
+#userinfo_username a {
+    color: #3b3632;
+}
+
+#userinfo_username a:hover {
+    color: #000;
+}
+
+#userinfo_major a {
+    background-color: transparent;
+}
+
+/* ---------- Alerts ---------- */
+
+#alerts {
+    box-sizing: border-box;
+    max-width: 1320px;
+    width: 90%;
+    margin: 8px auto;
+    padding: 0;
+}
+
+.alertbar a,
+.alert-bar {
+    background: #fffae3;
+    border: 1px solid #a18669;
+    border-radius: 3px;
+    color: #564029 !important;
+    box-shadow: inset 0 0 0 1px #fff;
+    text-shadow: 1px 1px 0 #fff;
+}
+
+/* ---------- Generic boxes / panels ---------- */
+
+.box,
+.sidebar .box,
+.vertical_space.box,
+.inbox_message,
+#artist_information,
+#similar_artist_map,
+#torrents .torrent_description,
+#artist .edit_form,
+#collage .create_form,
+#edit_collage,
+#filter_form,
+#reportform,
+#staff .box,
+#torrents .edit_form {
+    background: #fafafa;
+    border: 1px solid #888;
+    border-top: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,.12);
+}
+
+.box .head,
+.vertical_space.box .head,
+.inbox_message .head,
+#artist_information .head,
+#similar_artist_map .head,
+#torrents .torrent_description .head,
+.colhead_dark {
+    background: linear-gradient(#d9d9d9, #c7c7c7);
+    border: 0;
+    border-bottom: 1px solid #666;
+    color: #222;
+    padding: 8px;
+    line-height: normal;
+    text-shadow: 1px 1px 0 #e3e3e3;
+    box-shadow: inset 0 1px 0 #ededed;
+}
+
+.box .body,
+.box .pad,
+#artist_information .body,
+#similar_artist_map .body,
+#torrents .torrent_description .body {
+    color: #333;
+}
+
+.pad {
+    padding: 8px;
+}
+
+/* ---------- Tables ---------- */
+
+#better table,
+#inbox #messageform table,
+#log_table,
+#rules table,
+#top10 .torrent_table,
+#torrents .vote_matches_table,
+#upload #dnulist,
+#userhistory table:not(.forum_post):not(.users_reports_table),
+.collage_table,
+.forum_list.border,
+.request_table,
+.torrent_table,
+.users_reports_table,
+.wiki_log_table,
+table.staff {
+    margin-bottom: 12px;
+    border: 1px solid #888;
+    border-top: 0;
+    background: #fafafa;
+    box-shadow: 0 1px 3px rgba(0,0,0,.10);
+}
+
+#better table .rowa,
+#inbox #messageform table .rowa,
+#log_table .rowa,
+#rules table .rowa,
+#top10 .torrent_table .rowa,
+#torrents .vote_matches_table .rowa,
+#upload #dnulist .rowa,
+#userhistory table:not(.forum_post):not(.users_reports_table) .rowa,
+.collage_table .rowa,
+.forum_list.border .rowa,
+.request_table .rowa,
+.torrent_table .rowa,
+.users_reports_table .rowa,
+.wiki_log_table .rowa,
+table.staff .rowa {
+    background: #fafafa;
+}
+
+#better table .rowb,
+#inbox #messageform table .rowb,
+#log_table .rowb,
+#rules table .rowb,
+#top10 .torrent_table .rowb,
+#torrents .vote_matches_table .rowb,
+#upload #dnulist .rowb,
+#userhistory table:not(.forum_post):not(.users_reports_table) .rowb,
+.collage_table .rowb,
+.forum_list.border .rowb,
+.request_table .rowb,
+.torrent_table .rowb,
+.users_reports_table .rowb,
+.wiki_log_table .rowb,
+table.staff .rowb {
+    background: #ededed;
+}
+
+#better table tr.colhead td,
+#better table tr.colhead_dark td,
+#inbox #messageform table tr.colhead td,
+#inbox #messageform table tr.colhead_dark td,
+#log_table tr.colhead td,
+#log_table tr.colhead_dark td,
+#rules table tr.colhead td,
+#rules table tr.colhead_dark td,
+#top10 .torrent_table tr.colhead td,
+#top10 .torrent_table tr.colhead_dark td,
+#torrents .vote_matches_table tr.colhead td,
+#torrents .vote_matches_table tr.colhead_dark td,
+#upload #dnulist tr.colhead td,
+#upload #dnulist tr.colhead_dark td,
+#userhistory table:not(.forum_post):not(.users_reports_table) tr.colhead td,
+#userhistory table:not(.forum_post):not(.users_reports_table) tr.colhead_dark td,
+.collage_table tr.colhead td,
+.collage_table tr.colhead_dark td,
+.forum_list.border tr.colhead td,
+.forum_list.border tr.colhead_dark td,
+.request_table tr.colhead td,
+.request_table tr.colhead_dark td,
+.torrent_table tr.colhead td,
+.torrent_table tr.colhead_dark td,
+.users_reports_table tr.colhead td,
+.users_reports_table tr.colhead_dark td,
+.wiki_log_table tr.colhead td,
+.wiki_log_table tr.colhead_dark td,
+table.staff tr.colhead td,
+table.staff tr.colhead_dark td {
+    padding: 8px;
+    background: linear-gradient(#d9d9d9, #c7c7c7);
+    border: 0;
+    border-bottom: 1px solid #666;
+    color: #222;
+    font-size: 1em;
+    text-shadow: 1px 1px 0 #e3e3e3;
+}
+
+#better table .colhead a,
+#inbox #messageform table .colhead a,
+#log_table .colhead a,
+#rules table .colhead a,
+#top10 .torrent_table .colhead a,
+#torrents .vote_matches_table .colhead a,
+#upload #dnulist .colhead a,
+#userhistory table .colhead a,
+.collage_table .colhead a,
+.forum_list.border .colhead a,
+.request_table .colhead a,
+.torrent_table .colhead a,
+.users_reports_table .colhead a,
+.wiki_log_table .colhead a,
+table.staff .colhead a {
+    color: #333;
+}
+
+#better table tr:not(.colhead):not(.colhead_dark):hover td,
+#inbox #messageform table tr:not(.colhead):not(.colhead_dark):hover td,
+#log_table tr:not(.colhead):not(.colhead_dark):hover td,
+#rules table tr:not(.colhead):not(.colhead_dark):hover td,
+#top10 .torrent_table tr:not(.colhead):not(.colhead_dark):hover td,
+#torrents .vote_matches_table tr:not(.colhead):not(.colhead_dark):hover td,
+#upload #dnulist tr:not(.colhead):not(.colhead_dark):hover td,
+#userhistory table tr:not(.colhead):not(.colhead_dark):hover td,
+.collage_table tr:not(.colhead):not(.colhead_dark):hover td,
+.forum_list.border tr:not(.colhead):not(.colhead_dark):hover td,
+.request_table tr:not(.colhead):not(.colhead_dark):hover td,
+.torrent_table tr:not(.colhead):not(.colhead_dark):hover td,
+.users_reports_table tr:not(.colhead):not(.colhead_dark):hover td,
+.wiki_log_table tr:not(.colhead):not(.colhead_dark):hover td,
+table.staff tr:not(.colhead):not(.colhead_dark):hover td {
+    background: #f5f5f5;
+    color: #222;
+}
+
+/* ---------- Torrent lists ---------- */
+
+.torrent_table td {
+    min-width: 45px;
+}
+
+.torrent_table td,
+.torrent_table th {
+    border-color: #888;
+}
+
+.torrent_table .rowa td,
+.torrent_table .rowb td {
+    font-family: 'Inconsolata', 'Courier New', monospace;
+    font-size: 12px;
+}
+
+.torrent_table a {
+    color: #6f1820;
+}
+
+.torrent_table a:hover {
+    color: #b00000;
+}
+
+#torrents .torrent_description {
+    background: #fafafa;
+    margin-top: 15px;
+}
+
+#torrents .torrent_description .head {
+    background: linear-gradient(#d9d9d9,#c7c7c7);
+    color: #222;
+}
+
+/* ---------- Music / artist information ---------- */
+
+#artist_information,
+#similar_artist_map,
+#torrents .torrent_description {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 15px auto;
+    background: #fafafa;
+    border: 1px solid #888;
+}
+
+#artist_information .colhead,
+#artist_information .head,
+#similar_artist_map .colhead,
+#similar_artist_map .head,
+#torrents .torrent_description .colhead,
+#torrents .torrent_description .head {
+    padding: 8px;
+    background: linear-gradient(#d9d9d9,#c7c7c7);
+    border-bottom: 1px solid #666;
+    color: #222;
+    text-shadow: 1px 1px 0 #e3e3e3;
+}
+
+#artist_information .colhead a,
+#artist_information .head a,
+#similar_artist_map .colhead a,
+#similar_artist_map .head a,
+#torrents .torrent_description .colhead a,
+#torrents .torrent_description .head a {
+    color: #333;
+}
+
+/* ---------- Forum ---------- */
+
+table.forum_post {
+    background: #fafafa;
+    border: 1px solid #888;
+    box-shadow: 0 1px 3px rgba(0,0,0,.12);
+}
+
+table.forum_post .colhead_dark td {
+    background: linear-gradient(#d9d9d9,#c7c7c7);
+    border-bottom: 1px solid #666;
+    color: #222;
+    text-shadow: 1px 1px 0 #e3e3e3;
+}
+
+table.forum_post td.body {
+    color: #333;
+    background: #fafafa;
+}
+
+td.avatar {
+    background: #ededed;
+    border-right: 1px solid #aaa;
+}
+
+.forum_post.forum_unread .colhead_dark td {
+    background: linear-gradient(#e2a46f,#cc4e02);
+    border-bottom-color: #a43c00;
+    color: #fff;
+    text-shadow: 1px 1px 0 #8a2c00;
+}
+
+.forum_post.sticky_post .colhead_dark td {
+    background: linear-gradient(#e0d0b7,#c9b48f);
+    color: #59472f;
+}
+
+blockquote {
+    background: #ededed;
+    border: 1px solid #b1b1b1;
+    border-radius: 3px;
+    color: #333;
+}
+
+blockquote blockquote { background: #fafafa; }
+blockquote blockquote blockquote { background: #ededed; }
+
+/* ---------- Forum index ---------- */
+
+.forum_index a {
+    color: #5f1820;
+}
+
+.forum_index a:hover {
+    color: #b00000;
+}
+
+.forum_index tr:nth-of-type(2n) {
+    background: #ededed;
+}
+
+.forum_index tr:not(.colhead) td,
+table.forum_list tr:not(.colhead) td {
+    background: transparent;
+    border-bottom: 1px solid #ddd;
+}
+
+.forum_index tr.colhead td,
+table.forum_list tr.colhead td {
+    background: linear-gradient(#d9d9d9,#c7c7c7);
+    color: #222;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 0 #e3e3e3;
+}
+
+/* ---------- Forms ---------- */
+
+input[type=email],
+input[type=password],
+input[type=search],
+input[type=text],
+input[type=url],
+textarea,
+select {
+    box-sizing: border-box;
+    background: #fff;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    box-shadow: inset 1px 1px 2px rgba(0,0,0,.08);
+    color: #333;
+    padding: 5px 8px;
+}
+
+input[type=email]:focus,
+input[type=password]:focus,
+input[type=search]:focus,
+input[type=text]:focus,
+input[type=url]:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: #888 !important;
+    box-shadow: 0 0 2px rgba(100,100,100,.25);
+    color: #222;
+}
+
+button,
+input[type=button],
+input[type=submit] {
+    cursor: pointer;
+    outline: none;
+    padding: 5px 8px;
+    border: 1px solid #b0b0b0;
+    border-radius: 3px;
+    background: linear-gradient(#eff2f5,#d1d8dc);
+    box-shadow: none;
+    color: #333;
+    text-shadow: 1px 1px 0 #eee;
+}
+
+button:hover,
+input[type=button]:hover,
+input[type=submit]:hover {
+    border-color: #636363;
+    color: #111;
+}
+
+button:active,
+input[type=button]:active,
+input[type=submit]:active {
+    background: linear-gradient(#d1d8dc,#eff2f5);
+}
+
+/* ---------- Pagination ---------- */
+
+.pagination {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 10px 0;
+    padding: 7px 0;
+    background: #fafafa;
+    border: 1px solid #999;
+    color: #777;
+    text-align: center;
+}
+
+.pagination a {
+    color: #716d5d;
+}
+
+.pagination a:hover,
+.pagination .pagination__current-page {
+    color: #222;
+}
+
+/* ---------- User history ---------- */
+
+#userhistory .forum-post--heading-only .forum-post__heading {
+    padding: 5px;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    color: #333;
+}
+
+#userhistory .forum-post--heading-only:nth-child(odd) {
+    background: #ededed;
+}
+
+/* ---------- Collages ---------- */
+
+.collage_table tr.rowa td,
+.collage_table tr.rowb td {
+    height: 30px;
+}
+
+ul.collage_images img {
+    border: 3px solid #fafafa;
+    box-shadow: inset 0 0 0 1px #333, 0 1px 4px rgba(0,0,0,.18);
+}
+
+ul.collage_images img:hover {
+    box-shadow: inset 0 0 0 1px #333, 0 1px 5px rgba(120,20,20,.35);
+}
+
+.collage.small-cover-movie-list__container .small-cover-movie-list__movie:hover {
+    background: #333;
+    border-color: #333;
+}
+
+/* ---------- Sidebar ---------- */
+
+.sidebar .box {
+    background: #fafafa;
+    border-color: #888;
+}
+
+.sidebar .box .head {
+    background: linear-gradient(#d9d9d9,#c7c7c7);
+    color: #222;
+}
+
+.sidebar .box a {
+    color: #651821;
+}
+
+.sidebar .box a:hover {
+    color: #b00000;
+}
+
+/* ---------- Logo-independent header layout ---------- */
+
+#header {
+    background: transparent;
+}
+
+/* ---------- Small status / class colors ---------- */
+
+.username--user,
+.username--member {
+    color: #333;
+    font-weight: normal;
+}
+
+.username--power-user {
+    color: #222;
+    font-weight: bold;
+}
+
+.username--elite {
+    color: #c09;
+    font-weight: bold;
+}
+
+.username--torrent-master {
+    color: #60c;
+    font-weight: bold;
+}
+
+.username--torrent-king {
+    color: #390;
+    font-weight: bold;
+}
+
+.username--custom-class {
+    color: #069;
+    font-weight: bold;
+}
+
+.username--first-line-support {
+    color: #396;
+    font-weight: bold;
+}
+
+.username--developer {
+    color: #963;
+    font-weight: bold;
+}
+
+.username--assistant-director {
+    color: #03c;
+    font-weight: bold;
+}
+
+.username--director {
+    color: #c00;
+    font-weight: bold;
+}
+
+.username--team-leader {
+    color: #639;
+    font-weight: bold;
+}
+
+.username--producer {
+    color: #600;
+    font-weight: bold;
+    text-shadow: 0 0 1px #f00;
+}
+
+.username--vip,
+.username--legend,
+.username--torrent-celebrity {
+    color: #f60;
+    font-weight: bold;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 1300px) {
+    #menu,
+    #searchbars,
+    #userinfo_username,
+    #content,
+    #alerts {
+        width: 96%;
+    }
+}
+
+@media (max-width: 1000px) {
+    body {
+        min-width: 0;
+    }
+
+    #menu,
+    #searchbars,
+    #userinfo_username,
+    #content,
+    #alerts {
+        width: 98%;
+    }
+
+    #menu ul li a {
+        padding: 7px 9px;
+    }
+
+    #content {
+        padding: 10px;
+    }
+}
